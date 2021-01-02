@@ -46,5 +46,13 @@ var myFullpage = new fullpage('#fullpage', {
         {
             document.getElementById("firstvideo").play();
         }
+        console.log(destination.index);
+    },
+
+    afterSlideLoad: function( section, origin, destination, direction){
+      var loadedSlide = this;
+      if(section.index == 2 && destination.index == 0){
+        document.getElementById("firstvideo").play();
+      }
     }
 });
