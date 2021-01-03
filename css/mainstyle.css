@@ -48,15 +48,20 @@ html{
     line-height: 1em;
   }
 
+
+
 .experience{
     margin-left: 5%;
     margin-right: 5%;
     font-size: 1.5rem;
 }
 
+
+
+
 .workpic{
-    width: 60%;
-    height: 80%;
+    width: 50%;
+   /* height: 65%;*/
     margin: auto;
 }
 
@@ -65,3 +70,25 @@ html{
   width: 100%;
 }
 
+.work-title{
+  font-size: 3rem;
+}
+
+.work-title a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.work-title a:hover{
+  color: #FE6541;
+}
+.work-explain{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.work-reference{
+  margin-top: 1rem;
+  font-style: italic;
+}
