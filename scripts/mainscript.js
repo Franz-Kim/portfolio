@@ -35,7 +35,7 @@ var tl = anime.timeline({loop: false})
 var myFullpage = new fullpage('#fullpage', {
     sectionsColor: ['#F0EBDB','#F0EBDB','#F0EBDB','#F0EBDB'],
     anchors: ['SeungkiKim', 'bibilography', 'works'],
-    navigation: true,
+    navigation: false,
     navigationPosition: 'right',
     navigationTooltips: ['First page', 'Second page', 'Third and last page'],
     afterLoad: function (origin, destination, direction) {
