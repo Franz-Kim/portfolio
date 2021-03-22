@@ -1,95 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seungki Kim</title>
-    
-	<link rel="stylesheet" type="text/css" href="css/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+	<head>
+		<title>three.js webgl - clipIntersection</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		</head>
+	<body>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="fullpage">
-        <div class="section active" id="section0">
-            <h2 class="subtitle">
-                <span class="subtitle-text">Creative Developer</span>
-            </h2>
-            <h1 class="title-text">
-                <span class="text-wrapper">
-                  <span class="line line1"></span>
-                  <span class="letters">Seungki Kim</span>
-                </span>
-              </h1>
+		<script type="module">
 
-        </div>
-        <div class="section" id="section1">
-            <div class="experience">
-                <h1>Work Experiences</h1>
-                <span>
-                    2020.10 Co-founder, Studio atom&bits<br>
-                    2019.04 - 2020.10 Senior Designer, Corporate Design center, Samsung Electronics<br>
-                </span>
-                <h1>
-                    Education
-                </h1>
-                <span>
-                    2014 - 2019 Ph.D. Department of Industrial Design, KAIST<br>
-                    2012 - 2014 M.S. Department of Industrial Design, KAIST<br>
-                    2008 - 2012 B.S, Department of Industrial Design, KAIST
-                </span>
-                <h1>
-                    Skills
-                </h1>
-                <span>
-                    Physical computing, Web Developments, UX Design, 기타등등 여기 추가 수정 
-                    arduino, unity, HTML, Javascript, Max/MSP
-                </span>
-            </div>
-        </div>
-   
-        <div class="section" id="section2">
-            <div class="slide" id="slide1">
-                <div class="workpic">
-                    <div class="video-container">
-                        <a href="works/collaborative.html">
-                        <video id="firstvideo" playsinline="" muted="muted" loop="loop" width="100%" >
-                            <source src="resource/Horizontal_interactive.mp4"
-                                type="video/mp4">
-                        </video>
-                        </a>
-                    </div>
-                    <h1 class="work-title"> <a href="works/collaborative.html"> Collaborative Mobile Game > </a></h1>
-                    <div class="work-explain">
-                        여러대의 모바일 기기를 하나의 디스플레이처럼 연결하여 구성한 협력적 게임 디자인/개발. 이를 통해 여러 기기를 다양한 형태의 하나의 디스플레이로 사용할때 고려해야하는 디자인 요소와 그 효과를 검증하였다. (박사 학위 연구) <br>
-                    </div>
-                    <div class="work-reference">
-                        Seungki Kim, Donghyeon Ko, and Woohun Lee. (2017). Utilizing Smartphones as a Multi-Device Single Display Groupware to Design Collaborative Games. In Proceedings of the 2017 Conference on Designing Interactive Systems (DIS '17)
-                    </div>
-                </div>
-            </div>
-            <div class="slide" id="slide2">
-                <div class="workpic">
-                    <h1>Even for each slide if you want</h1>
-                </div>
-            </div>
-            <div class="slide" id="slide3">
-                <div class="workpic">
-                    <h1>Even for each slide if you want</h1>
-                </div>
-            </div>
-        </div>
+			import * as THREE from '../lib/three.module.js';
 
-    </div>
+			import { GUI } from '../lib/dat.gui.module.js';
 
-<script type="text/javascript" src="scripts/fullpage.min.js"></script>
-<script src="lib/anime.js"></script>
-<script src="scripts/mainscript.js" type="text/javascript"></script>
+			import { OrbitControls } from '../lib/OrbitControls.js';
 
-</body>
+			let camera, scene, renderer;
+
+			const params = {
+				clipIntersection: true,
+				planeConstant: 0,
+				showHelpers: false
+			};
+
+			const clipPlanes = [
+				new THREE.Plane( new THREE.Vector3( 1, 0, 0 ), 0 ),
+				new THREE.Plane( new THREE.Vector3( 0, - 1, 0 ), 0 ),
+				new THREE.Plane( new THREE.Vector3( 0, 0, - 1 ), 0 )
+			];
+
+			init();
+			render();
+
+			function init() {
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.localClippingEnabled = true;
+				document.body.appendChild( renderer.domElement );
+
+				scene = new THREE.Scene();
+
+				camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 200 );
+
+				camera.position.set( - 1.5, 2.5, 3.0 );
+
+				const controls = new OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', render ); // use only if there is no animation loop
+				controls.minDistance = 1;
+				controls.maxDistance = 10;
+				controls.enablePan = false;
+
+				const light = new THREE.HemisphereLight( 0xffffff, 0x080808, 1.5 );
+				light.position.set( - 1.25, 1, 1.25 );
+				scene.add( light );
+
+				// const helper = new THREE.CameraHelper( light.shadow.camera );
+				// scene.add( helper );
+
+				//
+
+				const group = new THREE.Group();
+
+				for ( let i = 1; i <= 30; i += 2 ) {
+
+					const geometry = new THREE.SphereBufferGeometry( i / 30, 48, 24 );
+
+					const material = new THREE.MeshLambertMaterial( {
+
+						color: new THREE.Color().setHSL( Math.random(), 0.5, 0.5 ),
+						side: THREE.DoubleSide,
+						clippingPlanes: clipPlanes,
+						clipIntersection: params.clipIntersection
+
+					} );
+
+					group.add( new THREE.Mesh( geometry, material ) );
+
+				}
+
+				scene.add( group );
+
+				// helpers
+
+				const helpers = new THREE.Group();
+				helpers.add( new THREE.PlaneHelper( clipPlanes[ 0 ], 2, 0xff0000 ) );
+				helpers.add( new THREE.PlaneHelper( clipPlanes[ 1 ], 2, 0x00ff00 ) );
+				helpers.add( new THREE.PlaneHelper( clipPlanes[ 2 ], 2, 0x0000ff ) );
+				helpers.visible = false;
+				scene.add( helpers );
+
+				// gui
+
+				const gui = new GUI();
+
+				gui.add( params, 'clipIntersection' ).name( 'clip intersection' ).onChange( function ( value ) {
+
+					const children = group.children;
+
+					for ( let i = 0; i < children.length; i ++ ) {
+
+						children[ i ].material.clipIntersection = value;
+
+					}
+
+					render();
+
+				} );
+
+				gui.add( params, 'planeConstant', - 1, 1 ).step( 0.01 ).name( 'plane constant' ).onChange( function ( value ) {
+
+					for ( let j = 0; j < clipPlanes.length; j ++ ) {
+
+						clipPlanes[ j ].constant = value;
+
+					}
+
+					render();
+
+				} );
+
+				gui.add( params, 'showHelpers' ).name( 'show helpers' ).onChange( function ( value ) {
+
+					helpers.visible = value;
+
+					render();
+
+				} );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				render();
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+
+	</body>
 </html>
