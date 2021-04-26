@@ -42,7 +42,7 @@ var myFullpage = new fullpage('#fullpage', {
         if (destination.index == 0) {
             tl.restart();
         }
-        if(destination.index == 2)
+        if(destination.index == 1)
         {
             document.getElementById("firstvideo").play();
         }
@@ -51,7 +51,7 @@ var myFullpage = new fullpage('#fullpage', {
 
     afterSlideLoad: function( section, origin, destination, direction){
       var loadedSlide = this;
-      if(section.index == 2 && destination.index == 0){
+      if(section.index == 1 && destination.index == 0){
         document.getElementById("firstvideo").play();
       }
     }

@@ -3,6 +3,32 @@ html{
     font-family: 'Roboto', sans-serif;
     background-color: #F0EBDB;
 }
+
+.main-header{
+    position:sticky;
+    position: -webkit-sticky;
+
+    margin-top: 0;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    top: 0;
+    z-index: 5;
+
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;  
+  }
+
+
+  .main-header a{
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .main-header a:hover{
+    color: #FE6541;
+  }
+
 .container{
     width: 80%;
     margin: 5% auto;
@@ -18,7 +44,22 @@ html{
 .type{
     margin-top: 1rem;
 }
-
+.publication{
+    margin-top: 1rem;
+}
 .explain{
     margin-top: 2rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+.explain_kor{
+        margin: auto;
+        left: 0;right: 0;
+        font-family: Noto Sans KR;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1rem;
+        text-align: left;
+        word-break: keep-all;    
 }
