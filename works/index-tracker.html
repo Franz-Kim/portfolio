@@ -24,7 +24,6 @@
       transform:translate(-50%,-50%);
       height:35px;
       width:35px;
-      border-radius:50%;
       border:2px solid black;
       z-index: 6;
     }
@@ -185,6 +184,7 @@
           {
             circle.style.left = center.x + 'px';
             circle.style.top = center.y + 'px';
+            circle.style.transform= `rotate(${match.getOrientation()}deg)`;
           }
 
           innerHtml.push('apex ang: ' + Math.round(match.getApexAngle()));
