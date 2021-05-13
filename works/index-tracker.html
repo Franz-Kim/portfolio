@@ -175,14 +175,16 @@
         // highlight the new results
         matches.forEach(function(match) {
 
+
+          var innerHtml = [];
+          var center = match.getCenter();
+
+
           if(match.index == 2)
           {
             circle.style.left = center.x + 'px';
             circle.style.top = center.y + 'px';
           }
-
-          var innerHtml = [];
-          var center = match.getCenter();
 
           innerHtml.push('apex ang: ' + Math.round(match.getApexAngle()));
           innerHtml.push('center pt: ' + Math.round(center.x) + ', ' + Math.round(center.y));
