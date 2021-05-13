@@ -130,6 +130,10 @@
         maxPointDistance: 300
       });
 
+
+      var touchBox = document.getElementById('touchBox');
+
+
       var touchHandlerImpl = function(touches, eventType) {
 
         var points = [];
@@ -162,6 +166,11 @@
         // highlight the new results
         matches.forEach(function(match) {
 
+          if(match.index == 2)
+          {
+            touchBox.style.backgroundColor='green'
+          }
+
           var innerHtml = [];
           var center = match.getCenter();
 
@@ -179,7 +188,6 @@
         event.preventDefault();
       };
 
-      var touchBox = document.getElementById('touchBox');
 
       // attach touch event handlers
       touchBox.addEventListener("touchstart", function(e) { touchHandler(e, 'start'); });
