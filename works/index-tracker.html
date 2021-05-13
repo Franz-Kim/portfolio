@@ -19,7 +19,14 @@
       margin: 0;
       padding: 20px;
     }
-
+    #centerpoint{
+      position:absolute;
+      transform:translate(-50%,-50%);
+      height:35px;
+      width:35px;
+      border-radius:50%;
+      border:2px solid black;
+    }
     #touchBox {
       width: 100%;
       height: 70%;
@@ -68,6 +75,7 @@
 
 <body>
 
+  <div id="centerpoint"></div>
   <div id="touchBox"></div>
   <div id="resultBox">
     <table>
@@ -132,6 +140,7 @@
 
 
       var touchBox = document.getElementById('touchBox');
+      var circle = document.getElementById('centerpoint')
 
 
       var touchHandlerImpl = function(touches, eventType) {
@@ -168,7 +177,8 @@
 
           if(match.index == 2)
           {
-            touchBox.style.backgroundColor='green'
+            circle.style.left = center.x + 'px';
+            circle.style.top = center.y + 'px';
           }
 
           var innerHtml = [];
