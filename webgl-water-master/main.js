@@ -41,7 +41,7 @@ var radius;
 var paused = false;
 
 window.onload = function() {
-  var ratio = Math.max(window.devicePixelRatio ,1);
+  var ratio = window.devicePixelRatio || 1;
 
   function onresize() {
     var width = innerWidth ;
@@ -53,7 +53,7 @@ window.onload = function() {
     gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
     gl.matrixMode(gl.PROJECTION);
     gl.loadIdentity();
-    gl.perspective(23, gl.canvas.width / gl.canvas.height, 0.01, 100);
+    gl.perspective(32, gl.canvas.width / gl.canvas.height, 0.01, 100);
     gl.matrixMode(gl.MODELVIEW);
     draw();
   }
