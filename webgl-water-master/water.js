@@ -20,12 +20,12 @@ function Water() {
     throw new Error('This demo requires the OES_texture_float extension');
   }
   var filter = GL.Texture.canUseFloatingPointLinearFiltering() ? gl.LINEAR : gl.NEAREST;
-  this.textureA = new GL.Texture(256, 256, { type: gl.FLOAT, filter: filter });
-  this.textureB = new GL.Texture(256, 256, { type: gl.FLOAT, filter: filter });
+  this.textureA = new GL.Texture(384, 384, { type: gl.FLOAT, filter: filter });
+  this.textureB = new GL.Texture(384, 384, { type: gl.FLOAT, filter: filter });
   if ((!this.textureA.canDrawTo() || !this.textureB.canDrawTo()) && GL.Texture.canUseHalfFloatingPointTextures()) {
     filter = GL.Texture.canUseHalfFloatingPointLinearFiltering() ? gl.LINEAR : gl.NEAREST;
-    this.textureA = new GL.Texture(256, 256, { type: gl.HALF_FLOAT_OES, filter: filter });
-    this.textureB = new GL.Texture(256, 256, { type: gl.HALF_FLOAT_OES, filter: filter });
+    this.textureA = new GL.Texture(384, 384, { type: gl.HALF_FLOAT_OES, filter: filter });
+    this.textureB = new GL.Texture(384, 384, { type: gl.HALF_FLOAT_OES, filter: filter });
   }
   this.dropShader = new GL.Shader(vertexShader, '\
     const float PI = 3.141592653589793;\
