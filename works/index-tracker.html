@@ -222,7 +222,7 @@ var rAF = window.requestAnimationFrame || window.mozRequestAnimationFrame || win
 function animate(){
 
   if(polygon.size <3000)
-  {polygon.size +=10;}
+  {polygon.size +=20;}
   
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.globalCompositeOperation = "source-over";
@@ -301,7 +301,7 @@ requestAnimationFrame(animate);
         }
         if(touches.length ==0)
         {
-          document.getElementById('grassvideo').style.display = "none";
+         // document.getElementById('grassvideo').style.display = "none";
           
         }
 
@@ -339,8 +339,8 @@ requestAnimationFrame(animate);
             circle.style.left = center.x + 'px';
             circle.style.top = center.y + 'px';
             circle.style.transform= `rotate(${match.getOrientation()}deg)`;
-            polygon.x = center.x-50;
-            polygon.y = center.y-50;
+            polygon.x = center.x-100;
+            polygon.y = center.y-100;
             polygon.rotation = match.getOrientation()*Math.PI/180;
             polygon.size=100;
 
