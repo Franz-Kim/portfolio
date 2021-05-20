@@ -108,12 +108,14 @@ window.onload = function() {
 
     if (windmode ==0 && windsoundobj.volume >0)
     {
-      var tempvolume = windsoundobj.volume-0.005;
-      windsoundobj.volume = Math.max(tempvolume,0)
+      var tempvolume = windsoundobj.volume-0.005; 
+      windsoundobj.volume = Math.max(tempvolume,0);
+      console.log(windsoundobj.volume);
     }
     if(windmode ==1 && windsoundobj.volume<1)
     { var tempvolume = windsoundobj.volume+0.002;
-      windsoundobj.volume = Math.min(tempvolume,1)
+      windsoundobj.volume = Math.min(tempvolume,1);
+      console.log(windsoundobj.volume);
     }
     requestAnimationFrame(animate);
   }
