@@ -28,7 +28,7 @@
       z-index: 6;
     }
 
-    #grassvideo{
+    video{
       display: none;
     }
     #touchBox {
@@ -90,6 +90,7 @@
   </div>
   <div id="touchBox">
     <video id="grassvideo" src="../resource/grass.mp4" muted autoplay loop height="100%"></video>
+    <video id="oceanvideo" src="../resource/Horizontal_interactive.mp4" muted autoplay loop height="100%"></video>
   </div>
   <canvas id="canvas"></canvas>
   <div id="resultBox">
@@ -349,6 +350,23 @@ requestAnimationFrame(animate);
             document.getElementById('grassvideo').style.display = "none";
           }
 
+          if(match.index == 2 || match.index == 3)
+          {
+            document.getElementById('oceanvideo').style.display = "inline";
+            circle.style.left = center.x + 'px';
+            circle.style.top = center.y + 'px';
+            circle.style.transform= `rotate(${match.getOrientation()}deg)`;
+            polygon.x = center.x-100;
+            polygon.y = center.y-100;
+            polygon.rotation = match.getOrientation()*Math.PI/180;
+            polygon.size=100;
+          }
+          else{
+            document.getElementById('oceanvideo').style.display = "none";
+          }
+
+
+          
           innerHtml.push('apex ang: ' + Math.round(match.getApexAngle()));
           innerHtml.push('center pt: ' + Math.round(center.x) + ', ' + Math.round(center.y));
           innerHtml.push('orient: ' + Math.round(match.getOrientation()) + '&deg;');
