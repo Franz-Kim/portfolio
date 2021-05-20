@@ -89,7 +89,7 @@
   <div id="centerpoint">
   </div>
   <div id="touchBox">
-    <video id="grassvideo" src="../resource/grass.mp4" muted autoplay width="100%"></video>
+    <video id="grassvideo" src="../resource/grass.mp4" muted autoplay loop width="100%"></video>
   </div>
   <canvas id="canvas"></canvas>
   <div id="resultBox">
@@ -332,7 +332,7 @@ requestAnimationFrame(animate);
             circle.style.transform= `rotate(${match.getOrientation()}deg)`;
             polygon.x = center.x-200;
             polygon.y = center.y-200;
-            polygon.rotation = match.getOrientation();
+            polygon.rotation = match.getOrientation()*Math.PI/180;
           }
           else{
             document.getElementById('grassvideo').style.display = "none";
