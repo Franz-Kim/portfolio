@@ -208,8 +208,8 @@ Polygon.prototype = {
 
 var polygon = Polygon({
       ctx: ctx,
-      sides: 3,
-      size: 400,
+      sides: 30,
+      size: 100,
       x: window.innerWidth/2,
       fill: '#fff'
 })
@@ -297,7 +297,7 @@ requestAnimationFrame(animate);
         }
         if(touches.length ==0)
         {
-          document.getElementById('grassvideo').style.display = "none";
+         // document.getElementById('grassvideo').style.display = "none";
         }
 
         // clear previous results
@@ -337,9 +337,14 @@ requestAnimationFrame(animate);
             polygon.x = center.x-200;
             polygon.y = center.y-200;
             polygon.rotation = match.getOrientation()*Math.PI/180;
+            if(polygon.size<2000)
+            {
+              polygon.size++;
+            }
           }
           else{
             document.getElementById('grassvideo').style.display = "none";
+            polygon.size =100;
           }
 
           innerHtml.push('apex ang: ' + Math.round(match.getApexAngle()));
