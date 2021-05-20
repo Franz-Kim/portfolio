@@ -59,7 +59,7 @@ window.onload = function() {
   }
 
   var windsoundobj = document.getElementById('windsound');
-  windsoundobj.volume =0;
+  windsoundobj.volume =1;
   var windmode =0;
 
   document.body.appendChild(gl.canvas);
