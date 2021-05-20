@@ -221,7 +221,9 @@ var rAF = window.requestAnimationFrame || window.mozRequestAnimationFrame || win
 
 function animate(){
 
-  polygon.size ++;
+  if(polygon.size <2000)
+  {polygon.size ++;}
+  
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.globalCompositeOperation = "source-over";
   
@@ -339,10 +341,8 @@ requestAnimationFrame(animate);
             polygon.x = center.x-200;
             polygon.y = center.y-200;
             polygon.rotation = match.getOrientation()*Math.PI/180;
-            if(polygon.size<2000)
-            {
-              polygon.size=100;
-            }
+            polygon.size=100;
+
           }
           else{
             document.getElementById('grassvideo').style.display = "none";
