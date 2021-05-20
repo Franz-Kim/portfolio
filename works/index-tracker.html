@@ -89,7 +89,7 @@
   <div id="centerpoint">
   </div>
   <div id="touchBox">
-    <video id="grassvideo" src="../resource/grass_resize.mp4" muted autoplay loop width="100%"></video>
+    <video id="grassvideo" src="../resource/grass.mp4" muted autoplay loop height="100%"></video>
   </div>
   <canvas id="canvas"></canvas>
   <div id="resultBox">
@@ -220,6 +220,8 @@ var rAF = window.requestAnimationFrame || window.mozRequestAnimationFrame || win
       function(callback){ window.setTimeout(callback, 20); };
 
 function animate(){
+
+  polygon.size ++;
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.globalCompositeOperation = "source-over";
   
@@ -339,12 +341,11 @@ requestAnimationFrame(animate);
             polygon.rotation = match.getOrientation()*Math.PI/180;
             if(polygon.size<2000)
             {
-              polygon.size++;
+              polygon.size=100;
             }
           }
           else{
             document.getElementById('grassvideo').style.display = "none";
-            polygon.size =100;
           }
 
           innerHtml.push('apex ang: ' + Math.round(match.getApexAngle()));
