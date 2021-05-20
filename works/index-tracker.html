@@ -295,6 +295,10 @@ requestAnimationFrame(animate);
             new tritra.Vector2d(touches[i].clientX, touches[i].clientY)
           );
         }
+        if(touches.length ==0)
+        {
+          document.getElementById('grassvideo').style.display = "none";
+        }
 
         // clear previous results
         for(var i = 0; i < apexAngles.length; i++) {
@@ -352,13 +356,6 @@ requestAnimationFrame(animate);
         event.preventDefault();
       };
 
-      function countTouches(event) {
-        var x = event.touches.length;
-        if(x ==0)
-        {
-          document.getElementById('grassvideo').style.display = "none";
-        }
-      }
       // attach touch event handlers
       touchBox.addEventListener("touchstart", function(e) { touchHandler(e, 'start'); });
       touchBox.addEventListener("touchmove", function(e) { touchHandler(e, 'move'); });
