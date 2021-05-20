@@ -27,12 +27,23 @@
       border:2px solid red;
       z-index: 6;
     }
+
+    #grassvideo{
+      display: none;
+    }
     #touchBox {
       width: 100%;
       height: 70%;
       background-color: #ffffff;
       border: 2px dashed #cccccc;
       position: relative;
+    }
+    #canvas{
+      position: absolute;
+      padding: 20px;
+      top: 0;
+      left: 0;
+      
     }
 
     #resultBox {
@@ -75,8 +86,12 @@
 
 <body>
 
-  <div id="centerpoint"></div>
-  <div id="touchBox"></div>
+  <div id="centerpoint">
+  </div>
+  <div id="touchBox">
+    <video id="grassvideo" src="../resource/grass.mp4" muted autoplay width="100%"></video>
+  </div>
+  <canvas id="canvas"></canvas>
   <div id="resultBox">
     <table>
       <thead>
@@ -107,6 +122,138 @@
   </div>
 
   <script>
+
+
+    var touchBox = document.getElementById('canvas');
+    var touchBoxsize = document.getElementById('touchBox');
+    var circle = document.getElementById('centerpoint')
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var width;
+    var height;
+
+    function resize(){
+      width = canvas.width = touchBoxsize.clientWidth;
+      height = canvas.height = touchBoxsize.clientHeight;
+      
+
+    }
+
+    resize();
+    window.addEventListener('resize',resize);
+
+
+    
+function Polygon(options) {
+  if (!(this instanceof Polygon)) { return new Polygon(options); }
+
+  for (var key in options) {
+    if (options.hasOwnProperty(key)) { this[key] = options[key]; }
+  }
+}
+
+var twoPI = 2 * Math.PI;
+
+Polygon.prototype = {
+  sides: 4,
+  size: 40,
+  x: 200,
+  y: window.innerHeight/4,
+  fill: '#000000',
+  ctx: false,
+  img: false,
+  rotation: 0,
+  preDraw: function() {},
+  postDraw: function() {},
+  draw: function() {
+    // Polygon math from http://scienceprimer.com/drawing-regular-polygons-javascript-canvas
+    if (this.ctx) {
+      var ctx = this.ctx,
+          i = this.sides;
+
+      ctx.save();
+      this.preDraw();
+      
+      ctx.translate(this.x,this.y);
+      
+      ctx.translate(this.size/2,this.size/2);
+      ctx.rotate(this.rotation * (Math.PI * 2 ));
+      
+
+      ctx.beginPath();
+      ctx.moveTo(this.size, 0);
+
+      while (i--) {
+        ctx.lineTo(
+          this.size * Math.cos(i * twoPI / this.sides),
+          this.size * Math.sin(i * twoPI / this.sides)
+        );
+      }
+      
+      ctx.translate(-this.size/2,-this.size/2);
+      
+
+      //ctx.closePath();
+      ctx.fillStyle = this.fill;
+      ctx.fill();
+      
+      this.postDraw();
+      ctx.restore();
+    }
+    
+    return this;
+  }
+};
+
+var polygon = Polygon({
+      ctx: ctx,
+      sides: 3,
+      size: 400,
+      x: window.innerWidth/2,
+      fill: '#fff'
+})
+
+
+var rAF = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame ||
+      // IE Fallback
+      function(callback){ window.setTimeout(callback, 20); };
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.globalCompositeOperation = "source-over";
+  
+  ctx.fillStyle = "#FFF";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  
+  ctx.globalCompositeOperation = "destination-out";
+  polygon.draw();          
+  
+  ctx.save();
+  ctx.restore();
+
+  requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+
+
+/*
+    document.getElementById('canvas').addEventListener("mousedown", function(event){
+     appeargrass(event);
+    });
+    function appeargrass(e) {
+     document.getElementById('grassvideo').style.display = "inline";
+     polygon.x = e.clientX-200;
+     polygon.y = e.clientY-200;
+    }
+    document.getElementById('canvas').addEventListener("mouseup", disappeargrass);
+    function disappeargrass() {
+     document.getElementById('grassvideo').style.display = "none";
+    }
+*/
+ 
+
+
     (function() {
 
       // define angles
@@ -138,9 +285,6 @@
         maxPointDistance: 500
       });
 
-
-      var touchBox = document.getElementById('touchBox');
-      var circle = document.getElementById('centerpoint')
 
 
       var touchHandlerImpl = function(touches, eventType) {
@@ -182,9 +326,16 @@
 
           if(match.index == 1)
           {
+            document.getElementById('grassvideo').style.display = "inline";
             circle.style.left = center.x + 'px';
             circle.style.top = center.y + 'px';
             circle.style.transform= `rotate(${match.getOrientation()}deg)`;
+            polygon.x = center.x-200;
+            polygon.y = center.y-200;
+            polygon.rotation = match.getOrientation();
+          }
+          else{
+            document.getElementById('grassvideo').style.display = "none";
           }
 
           innerHtml.push('apex ang: ' + Math.round(match.getApexAngle()));
