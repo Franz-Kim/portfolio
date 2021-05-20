@@ -58,6 +58,10 @@ window.onload = function() {
     draw();
   }
 
+  var windsoundobj = document.getElementById('windsound');
+  windsoundobj.volume =0;
+  var windmode =0;
+
   document.body.appendChild(gl.canvas);
   gl.clearColor(0, 0, 0, 1);
 
@@ -101,6 +105,16 @@ window.onload = function() {
       draw();
     }
     prevTime = nextTime;
+
+    if (windmode ==0 && windsoundobj.volume >0)
+    {
+      var tempvolume = windsoundobj.volume-0.005;
+      windsoundobj.volume = Math.max(tempvolume,0)
+    }
+    if(windmode ==1 && windsoundobj.volume<1)
+    { var tempvolume = windsoundobj.volume+0.002;
+      windsoundobj.volume = Math.min(tempvolume,1)
+    }
     requestAnimationFrame(animate);
   }
   requestAnimationFrame(animate);
@@ -133,6 +147,7 @@ window.onload = function() {
     } else {
      // mode = MODE_ORBIT_CAMERA;
     }
+    windmode =1;
   }
 
   function duringDrag(x, y) {
@@ -175,6 +190,7 @@ window.onload = function() {
 
   function stopDrag() {
     mode = -1;
+    windmode=0;
   }
 
   function isHelpElement(element) {
