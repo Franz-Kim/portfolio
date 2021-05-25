@@ -42,6 +42,9 @@ var paused = false;
 
 window.onload = function() {
   var ratio = window.devicePixelRatio || 1;
+ // document.getElementsByTagName('canvas')[0].requestFullscreen();
+
+
 
   function onresize() {
     var width = innerWidth ;
@@ -59,7 +62,7 @@ window.onload = function() {
   }
 
   var windsoundobj = document.getElementById('windsound');
-  windsoundobj.volume =1;
+  windsoundobj.volume =0;
   var windmode =0;
 
   document.body.appendChild(gl.canvas);
