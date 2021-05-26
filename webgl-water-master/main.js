@@ -41,13 +41,13 @@ var radius;
 var paused = false;
 
 window.onload = function() {
-  var ratio = window.devicePixelRatio || 1;
+  var ratio = window.devicePixelRatio || 2;
  // document.getElementsByTagName('canvas')[0].requestFullscreen();
 
 
 
   function onresize() {
-    var width = innerWidth ;
+    var width = innerWidth;
     var height = innerHeight;
     gl.canvas.width = width * ratio;
     gl.canvas.height = height * ratio;
