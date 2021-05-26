@@ -42,8 +42,7 @@ var paused = false;
 
 window.onload = function() {
   var ratio = window.devicePixelRatio || 2;
- // document.getElementsByTagName('canvas')[0].requestFullscreen();
-
+  document.getElementById('bodyid').requestFullscreen();
 
 
   function onresize() {
@@ -67,6 +66,8 @@ window.onload = function() {
 
   document.body.appendChild(gl.canvas);
   gl.clearColor(0, 0, 0, 1);
+
+
 
   water = new Water();
   renderer = new Renderer();
@@ -299,3 +300,5 @@ window.onload = function() {
     gl.disable(gl.DEPTH_TEST);
   }
 };
+
+
