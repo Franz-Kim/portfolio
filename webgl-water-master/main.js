@@ -42,7 +42,7 @@ var paused = false;
 
 window.onload = function() {
   var ratio = window.devicePixelRatio || 2;
-  document.getElementById('bodyid').requestFullscreen();
+  //document.getElementById('bodyid').requestFullscreen();
 
 
   function onresize() {
