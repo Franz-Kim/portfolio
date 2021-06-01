@@ -33,6 +33,35 @@ let config = {
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1024,
     CAPTURE_RESOLUTION: 512,
+    DENSITY_DISSIPATION: 0.8,
+    VELOCITY_DISSIPATION: 0.2,
+    PRESSURE: 0,
+    PRESSURE_ITERATIONS: 20,
+    CURL: 0, //30
+    SPLAT_RADIUS: 0.2,
+    SPLAT_FORCE: 6000,
+    SHADING: true,
+    COLORFUL: false,
+    COLOR_UPDATE_SPEED: 0,
+    PAUSED: false,
+    BACK_COLOR: { r: 0, g: 0, b: 0 },
+    TRANSPARENT: false,
+    BLOOM: false,
+    BLOOM_ITERATIONS: 8,
+    BLOOM_RESOLUTION: 256,
+    BLOOM_INTENSITY: 0.8,
+    BLOOM_THRESHOLD: 0.6,
+    BLOOM_SOFT_KNEE: 0.7,
+    SUNRAYS: true,
+    SUNRAYS_RESOLUTION: 196,
+    SUNRAYS_WEIGHT: 1.0,
+}
+
+
+/*
+    SIM_RESOLUTION: 128,
+    DYE_RESOLUTION: 1024,
+    CAPTURE_RESOLUTION: 512,
     DENSITY_DISSIPATION: 1.3,
     VELOCITY_DISSIPATION: 2.03,
     PRESSURE: 0,
@@ -55,8 +84,7 @@ let config = {
     SUNRAYS: true,
     SUNRAYS_RESOLUTION: 196,
     SUNRAYS_WEIGHT: 1.0,
-}
-
+*/
 function pointerPrototype () {
     this.id = -1;
     this.texcoordX = 0;
@@ -1140,13 +1168,21 @@ function updateKeywords () {
 
 updateKeywords();
 initFramebuffers();
-multipleSplats(parseInt(Math.random() * 20) + 5);
+//multipleSplats(parseInt(Math.random() * 20) + 5);
 
 let lastUpdateTime = Date.now();
 let colorUpdateTimer = 0.0;
+let counter = 0;
 update();
 
+
 function update () {
+   // if(counter ==20)
+    {multipleSplats( 1);
+    counter =0;}
+    counter ++;
+ //   splat(window.innerWidth/2, window.innerHeight-100, 0, 1000, generateColor());
+
     const dt = calcDeltaTime();
     if (resizeCanvas())
         initFramebuffers();
@@ -1155,6 +1191,11 @@ function update () {
     if (!config.PAUSED)
         step(dt);
     render(null);
+
+
+
+
+
     requestAnimationFrame(update);
 }
 
@@ -1403,10 +1444,10 @@ function multipleSplats (amount) {
         color.r *= 10.0;
         color.g *= 10.0;
         color.b *= 10.0;
-        const x = Math.random();
-        const y = Math.random();
-        const dx = 1000 * (Math.random() - 0.5);
-        const dy = 1000 * (Math.random() - 0.5);
+        const x = 0.5;
+        const y = 0.9;
+        const dx = 40 * (Math.random() - 0.5);
+        const dy = 20 * (Math.random() - 1);
         splat(x, y, dx, dy, color);
     }
 }
@@ -1536,7 +1577,7 @@ function correctDeltaY (delta) {
 }
 
 function generateColor () {
-    let c = HSVtoRGB(0, 0, 0.1);
+    let c = HSVtoRGB(0, 0, 0.03);
     c.r *= 0.15;
     c.g *= 0.15;
     c.b *= 0.15;
