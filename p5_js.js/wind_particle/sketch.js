@@ -23,8 +23,8 @@ function draw() {
 	for(let i = 0; i < 600; i++){
 		fill(COL[int(random(COL.length))]);
   	let s = random(10,20);
-		let x = (random(width)+frameCount*random(1,4))%(width+s)-s;
-		let y = (random(height)+sin(frameCount/200+i/200.0)*random(100,200))%(height+s)-s;
+		let y = (random(width)+frameCount*random(1,4))%(width+s)-s;
+		let x = (random(height)+sin(frameCount/200+i/200.0)*random(100,200))%(height+s)-s;
 		ellipse(x,y, s, s);
 
 	}
