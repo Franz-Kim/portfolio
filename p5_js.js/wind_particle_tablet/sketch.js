@@ -8,29 +8,23 @@ function setup() {
 	bg = createGraphics(width, height);
 	bg.background(0,1);
   bg.noStroke();
-  /*for (let i = 0; i < 300000; i++) {
-    let x = random(width);
-    let y = random(height);
-    let s = noise(x*0.01, y*0.01)*2;
-    //bg.fill(0, 50);
-    //bg.ellipse(x, y, s, s);
-  } */
+
 }
 
 function draw() {
 	randomSeed(0);
 	noStroke();
-	for(let i = 0; i < 600; i++){
+	for(let i = 0; i < 300; i++){
 		fill(COL[int(random(COL.length))]);
   	let s = random(10,20);
-		let x = (random(width)+frameCount*random(1,4))%(width+s)-s;
-		let y = (random(height)+sin(frameCount/200+i/200.0)*random(100,200))%(height+s)-s;
+		let x = (random(width)+frameCount*random(1,4))%(width+2*s)-s;
+		let y = (random(height)+sin(frameCount/200+i/200.0)*random(50,150))%(height+2*s)-s;
 		ellipse(x,y, s, s);
 
 	}
   fill(0,0,0,3);
   rect(0,0,width,height);
-//	image(bg,0,0);
+
 }
 
 function createCols(_url)
