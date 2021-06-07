@@ -1,4 +1,5 @@
 html, body {
+  font: 13px/140% Arial, sans-serif; background: black; color: white; overflow: hidden; position: fixed;
   margin: 0;
   padding: 0;
 }
