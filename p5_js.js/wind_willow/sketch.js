@@ -16,14 +16,22 @@ function setup() {
   colorMode (HSB);
   for ( i=0; i<width+22; i += 30) { // 포스터용 10
     for ( j=0; j<height+22; j += 30) {
-      append(color_v, map(random(),0,1,5,14)*10);
+      append(color_v, map(random(),0,1,7,14)*10);
+      //append(color_v, 50+i/28.0);
       }
   }
 }
 
+
+
+///////// 포스터
+/*
 function draw() {
-  background (30,0,22); //30,255,22 //포스터용 : 30,0,255
- // stroke(130,50,100,0.5); //130,50,100,0.5 //포스터용 110,50,50,0.2
+
+ background (30,0,255); 
+ stroke(110,50,50,0.2); 
+
+
   drawStream ();
 
 }
@@ -31,28 +39,68 @@ function draw() {
 
 function drawStream () {
   nx = 0;
-  for ( i=0; i<width+22; i += 30) { // 포스터용 10
+  for ( i=0; i<width+22; i += 10) { // 포스터용 10, 일반 30
     ny = 0;
     i_++;
-    for ( j=0; j<height+22; j += 30) { //포스터용 10
+    for ( j=0; j<height+22; j += 10) { //포스터용 10, 일반 30
       let displacement =0;
-      if(i%60 ==0)
-       displacement = 15;
+      if(i%20 ==0) //포스터 20, 일반 60
+       displacement = 5; //포스터 5, 일반 15
 
       angle = map (noise (nx, ny, nz), 0, 1.0, 0, 4* Math.PI);
-       x = 180 * cos (angle); //180
-       y = 180 * sin (angle);//180
-       stroke(color_v[i_*(int)(((width+22))/30)+j_],50,100,0.5);
-       //    console.log(i_*(int)(((width+22))/20)+j_);
+       x = 250 * cos (angle); //180
+       y = 250 * sin (angle);//180
+       //stroke(color_v[i_*(int)(((height+22))/30)+j_],50,100,0.5); //일반일땐 주석 풀기 포스터가 
      
       line (i, j+displacement, i+x, j+y+displacement);
-      ny += 0.03;
+      ny += 0.01;
       j_++;
     }
     j_=0;
-    nx += 0.03;
+    nx += 0.01;
   }
   i_=0;
   nz +=0.001;
 
+} 
+*/
+
+////일반 
+
+
+function draw() {
+  
+  background (30,0,22); //30,255,22 //포스터용 : 30,0,255
+ // stroke(130,50,100,0.5); //130,50,100,0.5 //포스터용 110,50,50,0.2
+ 
+   drawStream ();
+
 }
+
+
+function drawStream () {
+  nx = 0;
+  for ( i=0; i<width+22; i += 30) { // 포스터용 10, 일반 30
+    ny = 0;
+    i_++;
+    for ( j=0; j<height+22; j += 30) { //포스터용 10, 일반 30
+      let displacement =0;
+      if(i%60 ==0) //포스터 20, 일반 60
+       displacement = 15; //포스터 5, 일반 15
+
+      angle = map (noise (nx, ny, nz), 0, 1.0, 0, 4* Math.PI);
+       x = 350 * cos (angle); //180
+       y = 350 * sin (angle);//180
+       stroke(color_v[i_*(int)(((height+22))/30)+j_],50,100,0.5); //일반일땐 주석 풀기 포스터가 
+     
+      line (i, j+displacement, i+x, j+y+displacement);
+      ny += 0.018;
+      j_++;
+    }
+    j_=0;
+    nx += 0.018;
+  }
+  i_=0;
+  nz +=0.001;
+
+} 
