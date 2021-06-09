@@ -18,7 +18,9 @@ function draw() {
 		fill(COL[int(random(COL.length))]);
   	let s = random(10,20);
 		let x = (random(width)+frameCount*random(1,4))%(width+2*s)-s;
-		let y = (random(height)+sin(frameCount/200+i/200.0)*random(100,200))%(height+s)-s;
+		let y = (random(height)+sin(frameCount/120+i/200.0)*random(100,200))%(height+s)-s;
+		if(y < -s)
+			y = height+s+y;
 		ellipse(x,y, s, s);
 
 	}
