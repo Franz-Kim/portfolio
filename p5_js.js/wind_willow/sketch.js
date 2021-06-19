@@ -101,6 +101,6 @@ function drawStream () {
     nx += 0.025;
   }
   i_=0;
-  nz +=0.0015;
+  nz +=0.0013;
 
 }
