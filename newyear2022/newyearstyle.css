@@ -1,0 +1,33 @@
+body{
+    background-image: linear-gradient(#6667AB,#fbc7d4);
+    background-attachment:fixed;
+height:100vh;
+overflow: hidden
+}
+
+.intro{
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: rgb(31, 31, 31);
+}
+#intro_text{
+
+
+}
+.result{
+    display: none;
+    position:absolute;
+    top: 0;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 2rem;
+    align-items: center;
+    height: 100vh;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+}
+.result .letter{
+    opacity: 0;
+}
