@@ -32,7 +32,7 @@ var clickEvent = (function() {
 anime.timeline({loop: false})
   .add({
         targets: '#line',
-        height: ['0vh', '30vh'],
+        height: ['0vh', '20vh'],
         easing: 'easeInQuad',
         duration: 500,
         delay:300

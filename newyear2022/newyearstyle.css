@@ -1,9 +1,9 @@
 body{
-
 overflow: hidden
 }
 .background
-{   
+{   top:0;
+    left:0;
     position: absolute;
     background-image: linear-gradient(#6667AB,#fbc7d4);
     background-attachment:fixed;
@@ -13,6 +13,7 @@ overflow: hidden
 }
 
 .intro{
+    position: absolute;
     font-family: 'Noto Serif KR', serif;
     font-weight: 600;
     font-size: 8vw;
@@ -21,7 +22,7 @@ overflow: hidden
 }
 #line{
     border-left: 1px solid rgb(31, 31, 31);
-    height: 30vh;
+    height: 20vh;
     position: absolute;
     left: 50vw;
     top: 10vh;
@@ -33,7 +34,7 @@ overflow: hidden
     border-radius: 50%;
     position: absolute;
     left: 48.5vw;
-    top: 40vh;
+    top: 30vh;
 }
 #destext{
     display: inline-block;
