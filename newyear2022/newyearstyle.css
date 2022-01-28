@@ -1,9 +1,15 @@
 body{
+
+overflow: hidden
+}
+.background
+{   
     position: absolute;
     background-image: linear-gradient(#6667AB,#fbc7d4);
     background-attachment:fixed;
-height:100vh;
-/*overflow: hidden*/
+    height:100%;
+    width: 100%;
+
 }
 
 .intro{
