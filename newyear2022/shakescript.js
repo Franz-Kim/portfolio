@@ -18,14 +18,6 @@ document.getElementById('result_text').innerHTML = resulttext[randomindex];
 document.getElementById('message').innerHTML = message[randomindex];
 
 
-var clickEvent = (function() {
-    if ('ontouchstart' in document.documentElement === true) {
-      return 'touchstart';
-    } else {
-      return 'click';
-    }
-  })();
-
 
 
 
@@ -54,7 +46,7 @@ anime.timeline({loop: false})
   });
 
 
-document.body.addEventListener("touchend", clickevent);
+document.getElementsByClassName("background")[0].addEventListener("touchend", clickevent);
 
 function clickevent() {
     
@@ -64,7 +56,7 @@ function clickevent() {
     console.log(clickcount);
         if(clickcount==3)
         {
-            document.body.removeEventListener('click',clickevent);
+            document.getElementsByClassName("background")[0].removeEventListener('touchend',clickevent);
             anime.timeline({loop: false})
             .add({
                 targets: '.description',
