@@ -46,17 +46,17 @@ anime.timeline({loop: false})
   });
 
 
-document.getElementsByClassName("background")[0].addEventListener("touchend", clickevent);
+//document.getElementsByClassName("background")[0].addEventListener("touchend", clickevent);
 document.getElementsByClassName("background")[0].addEventListener("click", clickevent);
 function clickevent() {
     
-    window.navigator.vibrate([500]);
+   // window.navigator.vibrate([500]);
     clickcount ++;
     document.getElementById("counter").innerHTML = `${clickcount}/3`;
     console.log(clickcount);
         if(clickcount==3)
         {
-            document.getElementsByClassName("background")[0].removeEventListener('touchend',clickevent);
+  //          document.getElementsByClassName("background")[0].removeEventListener('touchend',clickevent);
             document.getElementsByClassName("background")[0].removeEventListener('click',clickevent);
 
             anime.timeline({loop: false})
