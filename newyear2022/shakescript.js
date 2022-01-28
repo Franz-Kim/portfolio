@@ -54,7 +54,7 @@ anime.timeline({loop: false})
   });
 
 
-document.body.addEventListener(clickEvent, clickevent);
+document.body.addEventListener("touchend", clickevent);
 
 function clickevent() {
     
