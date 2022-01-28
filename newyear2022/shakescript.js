@@ -47,7 +47,7 @@ anime.timeline({loop: false})
 
 
 document.getElementsByClassName("background")[0].addEventListener("touchend", clickevent);
-
+document.getElementsByClassName("background")[0].addEventListener("click", clickevent);
 function clickevent() {
     
     window.navigator.vibrate([500]);
@@ -57,6 +57,8 @@ function clickevent() {
         if(clickcount==3)
         {
             document.getElementsByClassName("background")[0].removeEventListener('touchend',clickevent);
+            document.getElementsByClassName("background")[0].removeEventListener('click',clickevent);
+
             anime.timeline({loop: false})
             .add({
                 targets: '.description',
