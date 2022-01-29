@@ -46,7 +46,6 @@ anime.timeline({loop: false})
   });
 
 
-//document.getElementsByClassName("background")[0].addEventListener("touchend", clickevent);
 document.getElementsByClassName("background")[0].addEventListener("click", clickevent);
 function clickevent() {
     
@@ -56,8 +55,7 @@ function clickevent() {
     console.log(clickcount);
         if(clickcount==3)
         {
-  //          document.getElementsByClassName("background")[0].removeEventListener('touchend',clickevent);
-            document.getElementsByClassName("background")[0].removeEventListener('click',clickevent);
+            document.getElementsByClassName("background")[0].removeEventListener("click",clickevent);
 
             anime.timeline({loop: false})
             .add({
@@ -65,7 +63,14 @@ function clickevent() {
                 translateZ: 0,
                 opacity: [1,0],
                 easing: "easeOutExpo",
-                duration: 1000
+                duration: 1000,
+
+                complete: function(anim) {
+                    for(let i =0 ; i<introclass.length;i++)
+                    {
+                    introclass[i].style.display = 'none';
+                    }
+                }
             })
             .add({
                 targets: '.progress_circle',
@@ -98,10 +103,7 @@ function clickevent() {
                     {
                         resultclass[i].style.display = 'inline-block';
                     }
-                    for(let i =0 ; i<introclass.length;i++)
-                    {
-                      introclass[i].style.display = 'none';
-                    }
+          
 
 
                     anime.timeline({loop: false})
