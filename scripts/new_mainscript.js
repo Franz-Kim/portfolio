@@ -126,6 +126,16 @@ function modalremove(c){
 
   });
 
+   var iframe = document.getElementsByTagName( 'iframe');
+  // var video = document.querySelector( 'video' );
+    for(let i =0 ; i<iframe.length;i++){  
+      var iframeSrc = iframe[i].src;
+      iframe[i].src = iframeSrc;}
+    /*if ( video ) {
+      video.pause();
+    }*/
+  
+
 }
 
 
