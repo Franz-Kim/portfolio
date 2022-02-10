@@ -47,7 +47,7 @@ function drawStream () {
     for ( j=0; j<height+22; j += 50) { //포스터용 10, 일반 30
       let displacement =0;
       if(j%50 ==0) //포스터 20, 일반 60
-       displacement = 17; //포스터 5, 일반 15
+       displacement = 25; //포스터 5, 일반 15
 
       angle = map (noise (nx, ny, nz), 0, 1.0, 0, 4* Math.PI);
        x = 500 * cos (angle); //180
@@ -65,3 +65,8 @@ function drawStream () {
   nz +=0.0015;
 
 }
+
+function windowResized() {
+    resizeCanvas(mycontainer.offsetWidth*0.8, mycontainer.clientHeight);
+    
+  }

@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/new_mainstyle.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
     <title>SeungkiKim</title>
 </head>
 <body>
     <header class="navigation">
-        <nav class="navigation_list">FranzKim_Logo</nav>
-        <nav class="navigation_list">
+        <nav class="navigation_list">FranzKim</nav>
+        <nav class="navigation_list" id="filtermenu">
             <div class="dropdown">
                 <button onclick="DropdownFunction()" class="dropbtn" id="dropbtnid">Works▼</button>
                 <div id="myDropdown" class="dropdown-content">
@@ -30,14 +35,15 @@
                 </div>
             </div>
         </nav>
-        <div class="navigation_list">About</div>
+        <nav class="navigation_list" >
+            <button class="dropbtn" onclick="modalpopup('about')">About</button>
+        </nav>
     </header>
+
 
     <div class="maingraphic" id="canvascontainer">
         <div class="maingraphic_text">Mindful & Social Experiences via Interaction<br>
         hompage under construction</div>
-
-
     </div>
 
  <!-- contents start-->
@@ -48,7 +54,7 @@
         <!-- 비로소나 -->
         <div class="contents #mindfulness #exhibition #service #installation">
             <div class="thumbnailimg">
-                <img src="/resource/ViRsona.png" alt="">
+                <img src="/resource/virsona2.png" alt="">
             </div>
             <div class="textcontainer">
                 <div class="taglist">
@@ -57,14 +63,14 @@
                     <button onclick="filterSelection('#service')" class="tag">#service</button>
                     <button onclick="filterSelection('#installation')" class="tag">#installation</button>
                 </div>
-                <div class="worktitle">ViRsona</div>
+                <button onclick="modalpopup('virsona')" class="worktitle">ViRsona</button>
                 <div class="year">2021</div>
                 <div class="description english">Description of work here. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         orem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     </div>
-                <div class="more">more information ></div>
+                <button class="more" onclick="modalpopup('virsona')">more information ></button>
             </div>
         </div>
 
@@ -80,14 +86,14 @@
                     <button onclick="filterSelection('#exhibition')" class="tag">#exhibition</button>
                     <button onclick="filterSelection('#service')" class="tag">#service</button>
                 </div>
-                <div class="worktitle">eewan clinic</div>
+                <button class="worktitle" onclick="modalpopup('eewanclinic')">eewan clinic</button>
                 <div class="year">2021</div>
                 <div class="description english">Description of work here. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         orem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     </div>
-                <div class="more">more information ></div>
+                <button class="more" onclick="modalpopup('eewanclinic')">more information ></button>
             </div>
         </div>
 
@@ -103,14 +109,14 @@
                     <button onclick="filterSelection('#exhibition')" class="tag">#exhibition</button>
                     <button onclick="filterSelection('#service')" class="tag">#service</button>
                 </div>
-                <div class="worktitle">eewan reaction: project solsol</div>
+                <button class="worktitle" onclick="modalpopup('solsol')">eewan reaction: project solsol</button>
                 <div class="year">2021</div>
                 <div class="description english">Description of work here. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         orem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     </div>
-                <div class="more">more information ></div>
+                <button class="more" onclick="modalpopup('solsol')">more information ></button>
             </div>
         </div>
         
@@ -125,14 +131,14 @@
                     <button onclick="filterSelection('#exhibition')" class="tag">#exhibition</button>
                     <button onclick="filterSelection('#installation')" class="tag">#installation</button>
                 </div>
-                <div class="worktitle">Second Garden</div>
+                <button class="worktitle" onclick="modalpopup('secondgarden')">Second Garden</button>
                 <div class="year">2021</div>
                 <div class="description english">Description of work here. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         orem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     </div>
-                <div class="more">more information ></div>
+                <button class="more" onclick="modalpopup('secondgarden')">more information ></button>
             </div>
         </div>
 
@@ -149,14 +155,14 @@
                     <button onclick="filterSelection('#exhibition')" class="tag">#exhibition</button>
                     <button onclick="filterSelection('#installation')" class="tag">#installation</button>
                 </div>
-                <div class="worktitle">TouchBranch</div>
+                <button class="worktitle" onclick="modalpopup('touchbranch')">TouchBranch</button>
                 <div class="year">2018</div>
                 <div class="description english">Description of work here. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         orem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     </div>
-                <div class="more">more information ></div>
+                <button class="more" onclick="modalpopup('touchbranch')">more information ></button>
             </div>
         </div>
 
@@ -172,14 +178,14 @@
                     <button onclick="filterSelection('#research')" class="tag">#research</button>
                     <button onclick="filterSelection('#application')" class="tag">#application</button>
                 </div>
-                <div class="worktitle">Tangram display: Collaborative games</div>
+                <button class="worktitle" onclick="modalpopup('tangram')">Tangram display: Collaborative games</button>
                 <div class="year">2017</div>
                 <div class="description english">Description of work here. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         orem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     </div>
-                <div class="more">more information ></div>
+                <button class="more" onclick="modalpopup('tangram')">more information ></button>
             </div>
         </div>
         
@@ -198,14 +204,14 @@
                     <button onclick="filterSelection('#exhibition')" class="tag">#exhibition</button>
                     <button onclick="filterSelection('#installation')" class="tag">#installation</button>
                 </div>
-                <div class="worktitle">TransWall</div>
+                <button class="worktitle" onclick="modalpopup('transwall')">TransWall</button>
                 <div class="year">2013</div>
                 <div class="description english">Description of work here. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         orem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     </div>
-                <div class="more">more information ></div>
+                <button class="more" onclick="modalpopup('transwall')">more information ></button>
             </div>
         </div>
 
@@ -220,25 +226,136 @@
                     <button onclick="filterSelection('#research')" class="tag">#research</button>
                     <button onclick="filterSelection('#application')" class="tag">#application</button>
                 </div>
-                <div class="worktitle">SoundBound</div>
+                <button class="worktitle" onclick="modalpopup('soundbound')">SoundBound</button>
                 <div class="year">2013</div>
                 <div class="description english">Description of work here. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         orem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     </div>
-                <div class="more">more information ></div>
+                <button class="more" onclick="modalpopup('soundbound')">more information ></button>
             </div>
         </div>
 
 
     </div>
-    
 
     <footer>
         <div class="footerline"></div>
         <div class="footertext">Designed & Developed by Seungki Kim. All rights reserved. franzkim89@gmail.com </div>
     </footer>
+
+
+
+<!-- modal start-->
+    <!--background-->
+    <div class="modalback" id="modal_back"></div>
+
+    <!-- about-->
+    <div class="modal" id="about">
+        <div class="modal_contents_container">
+<b style="font-size: 3rem; line-height: 4rem;">Seungki Kim</b>
+<b style="font-size: 1.2rem; font-weight: 300;">creative developer</b>
+franzkim89@gmail.com
+
+ 
+<b style="font-size: 1.2rem;">Experiences</b>
+
+    2022.03 - 		        Lecturer, Korea University, Dept. of Industrial Design
+    2022.03 -		        Lecturer, Sunshine Women’s University, Dept. of Future Convergence Technology Engineering
+    2021.04 -		        ZER01NE Creator, Hyundai Motor Group
+    2020.10 - 2020.12	Co-founder, Studio atom&bits
+    2019.04 - 2020.10 	Senior Designer, Corporate Design Center, Samsung Electronics
+
+<b style="font-size: 1.2rem;">Education</b>
+
+    2014 - 2019 		Ph.D. Department of Industrial Design, KAIST
+    2012 - 2014 		M.S. Department of Industrial Design, KAIST
+    2008 - 2012 		B.S, Department of Industrial Design, KAIST
+
+<b style="font-size: 1.2rem;">Exhibition</b>
+
+    2021.11		        이완 클리닉 (바이오 데이터 기반 체험형 서비스 & 웹), Zer01neDay, 구 원효로 현대자동차 서비스 센터 
+    2021.11		        ViRsona (VR 기반 명상적 체험 컨텐츠), Zer01neDay, 구 원효로 현대자동차 서비스 센터  
+    2021.09		        Second Garden (인터렉티브 공간 인스톨레이션), Open Media Art Festival, 문화 비축기지
+    2021.07		        Hidden Research Metaverse Objet (인터렉티브 인스톨레이션), 기후 미술관, 서울시립미술관
+    2021.06		        이완반응X공예가: 프로젝트 솔솔 (체험형 감각 서비스), Partition WSC
+    2021.04		        Second Garden (인터렉티브 인스톨레이션), 내일의 예술전, 예술의 전당	
+
+<b style="font-size: 1.2rem;">Publications</b>
+
+    <b style="font-weight: 400;">Seungki Kim</b>, Jiwoo Hong, Jaeyeon Lee, Hyun-Sook Choi, Geehyuk Lee, and Woohun Lee. (2018). TouchBranch: Understanding Interpersonal Touches in Interactive Installation. In Proceedings of the 2018 Designing Interactive Systems Conference (DIS '18)
+    
+    <b  style="font-weight: 400;">Seungki Kim</b>, Jiwoo hong, Jaeyeon Lee, Geehyuk Lee, Woohun Lee, and Hyunsook Choi. (2017). Developing and Understanding UX of the Interactive Installation with interpersonal touch technology.  In Proceedings of the International Symposium of Science Museum (ISSM 2017). 중앙과학관장상
+    
+    <b  style="font-weight: 400;">Seungki Kim</b>, Donghyeon Ko, and Woohun Lee. (2017). Utilizing Smartphones as a Multi-Device Single Display Groupware to Design Collaborative Games. In Proceedings of the 2017 Conference on Designing Interactive Systems (DIS '17)
+    
+    <b  style="font-weight: 400;">Seungki Kim</b> and Woohun Lee. (2015). Collocated Social Interaction through Music: Cooperation and Collaboration. In Proceedings of the 17th International Conference on Human-Computer Interaction with Mobile Devices and Services Adjunct (MobileHCI '15) 
+    
+    Heejeong Heo, Hyung Kun Park, <b  style="font-weight: 400;">Seungki Kim</b>, Jeeyong Chung, Geehyuk Lee, and Woohun Lee. (2014). Transwall: a transparent double-sided touch display facilitating co-located face-to-face interactions. In CHI '14 Extended Abstracts on Human Factors in Computing Systems (CHI EA '14) 
+    
+    Heejeong Heo, <b style="font-weight: 400;">Seungki Kim</b>, Hyungkun Park, Jeeyong Chung, Geehyuk Lee and Woohun Lee (2013). TransWall. In ACM SIGGRAPH 2013 Emerging Technologies (SIGGRAPH’13).
+    
+    Hyangah Kim, <b style="font-weight: 400;">Seungki Kim</b> and Woohun Lee (2013). A Taxonomy of Appropriation: Finding a Suitable Method to Explore Design-in-use. In International Association of Societies of Design Research Conference 2013 (IASDR ’13).
+    
+    <b style="font-weight: 400;">Seungki Kim</b> and Woohun Lee (2013). SOUND BOUND: making a graphic equalizer more interactive and fun. In CHI ’13 Extended Abstracts on Human Factors in Computing Systems(CHI EA ’13).
+
+        </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('about')">✖︎</button>
+    </div>
+
+    <!-- 비로소나-->
+    <div class="modal" id="virsona">
+        <div class="modal_contents_container">virso </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('virsona')">✖︎</button>
+    </div>
+
+    <!-- 이완클리닉-->
+    <div class="modal" id="eewanclinic">
+        <div class="modal_contents_container">clinci </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('eewanclinic')">✖︎</button>
+    </div>
+
+    <!--솔솔프로젝트-->
+    <div class="modal" id="solsol">
+        <div class="modal_contents_container">solsol </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('solsol')">✖︎</button>
+    </div>
+
+    <!--second garden-->
+    <div class="modal" id="secondgarden">
+        <div class="modal_contents_container">secondgarden</div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('secondgarden')">✖︎</button>
+    </div>
+
+    <!--touch branch-->
+    <div class="modal" id="touchbranch">
+        <div class="modal_contents_container">touchbranch </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('touchbranch')">✖︎</button>
+    </div>
+
+    <!--박사논문-->
+    <div class="modal" id="tangram">
+        <div class="modal_contents_container">tangram </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('tangram')">✖︎</button>
+    </div>
+
+    <!--transwall-->
+    <div class="modal" id="transwall">
+        <div class="modal_contents_container">transwall </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('transwall')">✖︎</button>
+    </div>
+
+    <!--soundbound-->
+    <div class="modal" id="soundbound">
+        <div class="modal_contents_container">soundbound </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('soundbound')">✖︎</button>
+    </div>
+
+
+
+
+
 
 
     <script src="lib/anime.js"></script>

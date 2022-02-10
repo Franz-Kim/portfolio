@@ -76,6 +76,61 @@ function filterSelection(c) {
     }
 }
 
+
+
+
+//modal popup
+
+
+
+function modalpopup(c) {
+  let targetobj = document.getElementById(c);
+  document.getElementById("modal_back").style.display = 'block';
+  targetobj.style.display ='block';
+  document.body.style.overflow = 'hidden';
+
+  anime({
+    targets: '.modalback',
+    opacity: [0,1],
+    duration: 1000,
+    easing: "easeOutExpo",
+  });
+  anime({
+    targets: targetobj,
+    translateX: ['100%',0],
+    duration: 1000,
+    easing: "easeOutExpo",
+  });
+
+
+}
+
+function modalremove(c){
+  let targetobj = document.getElementById(c);
+  document.body.style.overflow = 'auto';
+  anime({
+    targets: '.modalback',
+    opacity: [1,0],
+    duration: 700,
+    easing: "easeOutExpo",
+  });
+  anime({
+    targets: targetobj,
+    translateX: [0,'130%'],
+    duration: 700,
+    easing: "easeOutExpo",
+    complete: function(anim) {
+      document.getElementById("modal_back").style.display = 'none';
+      targetobj.style.display ='none';
+    }
+
+  });
+
+}
+
+
+
+
 function AddClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");

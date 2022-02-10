@@ -1,20 +1,44 @@
+html{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+button{
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+button:hover{
+  color: cadetblue;
+}
 .navigation{
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.2rem ;
+    font-weight: 400 ;
 
+}
 
+#filtermenu{
+  width: 30vw;
+  display: flex;
+  justify-content: center;
 }
 
 /*    dropdown css */
 
+
 .dropbtn {
     background-color: transparent;
     border: none;
-    font-size: inherit;
+
+    font-size: 1.2rem;
+    font-weight: 400;
   }
-  
+
 
 #myDropdown{
     transform-origin: 0 0;
@@ -25,7 +49,7 @@
   }
   
   
-  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  .dropdown:hover .dropbtn,  .dropbtn:hover{
       color:cadetblue;
   }
   
@@ -102,8 +126,8 @@
 }
 .thumbnailimg{
   min-width: 30%;
-  height: 30vh;
-  background-color: cadetblue;
+  
+  aspect-ratio: 16/10;
 }
 .thumbnailimg img{
   width: 100%;
@@ -112,6 +136,7 @@
 }
 
 .textcontainer{
+  width: 100%;
   align-self: flex-end;
   margin-left: 3rem;
   margin-bottom: 1rem;
@@ -119,9 +144,12 @@
 
 .taglist{
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .tag{
   margin-right: 1rem;
+  margin-bottom: 0.5rem;
   padding: 0.4rem 1rem;
   border-radius: 2rem;
   border: 1px solid cadetblue;
@@ -130,23 +158,102 @@
 }
 .tag:hover{
   background-color: cadetblue;
+  color: black;
 }
 
 .worktitle{
   margin-top: 1rem;
   font-size: 1.5rem;
+  font-weight: 100;
 }
 .year{
 }
 .description{
   margin:1rem 0;
 }
-
-
+.more{
+  font-size: 1rem;
+}
 
 .contents_show{
     display: flex;
-  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modalback{
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4); 
+
+}
+.modal{
+  transform-origin: 50%,50%;
+  position: fixed;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  border-radius: 3rem;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.9); 
+}
+.modal_contents_container{
+  width:calc(100% - 5*1rem);
+  height: calc(100% - 5*1rem);
+  position:absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  overflow-y: auto;
+  white-space:pre-wrap;
+  line-height: 1.5rem;
+}
+
+
+.modal_close{
+  background-color: transparent;
+  border: none;
+  display: block;
+  position:absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  font-weight:400;
+}
+.modal_close:hover{
+  color: cadetblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -159,4 +266,49 @@ footer{
 .footertext{
   margin: 1rem 0;
   text-align: center;
+}
+button{
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobile layout */
+
+
+
+@media ( max-width: 768px ) {
+  html {
+    font-size: 12px; 
+  }
+  #filtermenu{
+    width: 25vw;
+  }
+  .maingraphic{
+    height: 20vh;
+    }
+
+
+
+  .contents{
+    flex-direction: column;
+  }
+  .textcontainer{
+    align-self:flex-start;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+
+
 }
