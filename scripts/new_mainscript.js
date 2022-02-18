@@ -99,6 +99,7 @@ function modalpopup(c) {
   anime({
     targets: targetobj,
     translateX: ['100%',0],
+    opacity:1,
     duration: 1000,
     easing: "easeOutExpo",
   });
@@ -118,6 +119,7 @@ function modalremove(c){
   anime({
     targets: targetobj,
     translateX: [0,'130%'],
+    opacity:0,
     duration: 700,
     easing: "easeOutExpo",
     complete: function(anim) {
@@ -153,18 +155,23 @@ function currentSlide(k,n) {
 
 function showSlides(k,n) {
   var i;
+
   var slides = document.getElementsByClassName(`${k}Slide mySlides`);
   var dots = document.getElementsByClassName(`${k}Slide dot`);
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+
+  if(slides.length!=0){
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
 }
 
 

@@ -215,6 +215,7 @@ button:hover{
 .modal{
   transform-origin: 50%,50%;
   position: fixed;
+  opacity: 0;
   top: 7.5%;
   left: 15%;
   width: 70%;
@@ -313,8 +314,8 @@ button:hover{
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 0.8rem;
+  width: 0.8rem;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;

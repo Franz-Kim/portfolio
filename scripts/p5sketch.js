@@ -48,8 +48,8 @@ function drawStream () {
       let displacement =0;
       
       angle = map (noise (nx, ny, nz), 0, 1.0, 0, 4* Math.PI);
-       x = 500 * cos (angle); //180
-       y = 500 * sin (angle);//180
+       x = mycontainer.offsetWidth/4 * cos (angle); //180
+       y = mycontainer.offsetWidth/4 * sin (angle);//180
       // stroke(color_v[i_*(int)(((height+22))/25)+j_],50,100,0.5); //일반일땐 주석 풀기 포스터가 
      
       line (i+displacement, j, i+x+displacement, j+y);
