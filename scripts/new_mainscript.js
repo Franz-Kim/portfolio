@@ -129,6 +129,8 @@ function modalremove(c){
 
   });
 
+  slideIndex=1;
+
    var iframe = document.getElementsByTagName( 'iframe');
   // var video = document.querySelector( 'video' );
     for(let i =0 ; i<iframe.length;i++){  
