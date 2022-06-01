@@ -33,6 +33,11 @@ function draw() {
     }
   }
   turnBall();
+
+  if(touches.length > 0 )
+  {
+    Balls.push(new Ball(mouseX, mouseY,random(100,500),[random(50),random(150),random(255)]));
+  }
 }
 
 class Ball { //라이프 넣기, 페이드 넣기, 
