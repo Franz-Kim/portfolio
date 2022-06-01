@@ -74,3 +74,7 @@ function turnBall() {
 function mouseMoved() {
   Balls.push(new Ball(mouseX, mouseY,random(100,500),[random(50),random(150),random(255)]));
 }
+
+function touchMoved() {
+  Balls.push(new Ball(mouseX, mouseY,random(100,500),[random(50),random(150),random(255)]));
+}
