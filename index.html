@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-
+  
     <title>SeungkiKim</title>
 </head>
 <body>
@@ -22,11 +21,13 @@
                 <div id="myDropdown" class="dropdown-content">
                     <button onclick="filterSelection('Works▼')">#show_all</button>
                     <div>Theme</div>
-                    <button onclick="filterSelection('#mindfulness')">#mindfulness</button>
                     <button onclick="filterSelection('#social_interaction')">#social_interaction</button>
+                    <button onclick="filterSelection('#AI')">#AI</button>
+                    <button onclick="filterSelection('#mindfulness')">#mindfulness</button>
                     <div>Method</div>
                     <button onclick="filterSelection('#exhibition')">#exhibition</button>
                     <button onclick="filterSelection('#research')">#research</button>
+                    <button onclick="filterSelection('#UX')">#UX</button>
                     <div>Type</div>
                     <button onclick="filterSelection('#installation')">#installation</button>
                     <button onclick="filterSelection('#service')">#service</button>
@@ -50,6 +51,10 @@
     <div class="contents_container">
         <!-- first contents-->
 
+        <div class="intro">
+            introtext,introtext,introtext,introtext 테스트테스트
+        </div>
+
         <!-- 3Dpresso -->
           <div class="contents #AI #service #UX">
             <div class="thumbnailimg" onclick="modalpopup('3dpresso')">
@@ -63,6 +68,7 @@
                 </div>
                 <button onclick="modalpopup('3dpresso')" class="worktitle">3Dpresso</button>
                 <div class="year">2022</div>
+                <div class="role">Role: Product owner, main director</div>
                 <div class="description english">
                  3dpresso descriptions.3dpresso descriptions.3dpresso descriptions.3dpresso descriptions.3dpresso descriptions.
                 </div>
@@ -81,11 +87,11 @@
                 <div class="taglist">
                     <button onclick="filterSelection('#mindfulness')" class="tag">#mindfulness</button>
                     <button onclick="filterSelection('#exhibition')" class="tag">#exhibition</button>
-                    <button onclick="filterSelection('#service')" class="tag">#service</button>
                     <button onclick="filterSelection('#installation')" class="tag">#installation</button>
                 </div>
                 <button onclick="modalpopup('virsona')" class="worktitle">ViRsona</button>
                 <div class="year">2021</div>
+                <div class="role">Role: Creative Developer, VR contents design, physical computing</div>
                 <div class="description english">
                  〈ViRsona〉 seeks ways to strengthen the self, even in today’s virtual environment, by using VR technology and combining biometric data within this virtual environment. It is very interesting to feel and focus on our own bodies even in virtual space. Such a method emerges from meditation, which focuses on the inner self, and will be a new sensory experience in form and content, beyond what exists for us now.
                 </div>
@@ -105,8 +111,9 @@
                     <button onclick="filterSelection('#exhibition')" class="tag">#exhibition</button>
                     <button onclick="filterSelection('#service')" class="tag">#service</button>
                 </div>
-                <button class="worktitle" onclick="modalpopup('eewanclinic')">eewan clinic</button>
+                <button class="worktitle" onclick="modalpopup('eewanclinic')">이완 클리닉</button>
                 <div class="year">2021</div>
+                <div class="role">Role: Creative Developer, Graphic Design</div>
                 <div class="description english">
                     〈eewan clinic〉 prescribes digital nature, referred to as virtual paradise, to audiences by their mind symptoms. It provides moments of relaxation and arousal outside our daily lives and also can be imagined as futuristic clinic centers. 
                                     </div>
@@ -290,6 +297,10 @@ franzkim89@gmail.com
     2021.06		        이완반응X공예가: 프로젝트 솔솔 (체험형 감각 서비스), Partition WSC
     2021.04		        Second Garden (인터렉티브 인스톨레이션), 내일의 예술전, 예술의 전당	
 
+<b style="font-size: 1.2rem;">Skills</b>
+
+    UX tools (Figma, ADOBE tools), 3D tools(Blender), Unity(C#), AI tools(Midjourny,LUMA,RUNWAY) Web-development(including javascript), Physical computing etc. 
+
 <b style="font-size: 1.2rem;">Publications</b>
 
     <b style="font-weight: 400;">Seungki Kim</b>, Jiwoo Hong, Jaeyeon Lee, Hyun-Sook Choi, Geehyuk Lee, and Woohun Lee. (2018). TouchBranch: Understanding Interpersonal Touches in Interactive Installation. In Proceedings of the 2018 Designing Interactive Systems Conference (DIS '18)
@@ -364,7 +375,7 @@ franzkim89@gmail.com
 
 
     <!-- 비로소나-->
-    <div class="modal" id="3dpresso">
+    <div class="modal" id="virsona">
         <div class="modal_contents_container">
 
             <div class="mainimg">
@@ -452,7 +463,19 @@ franzkim89@gmail.com
             <div class="modaltext">
                 〈이완클리닉: 자연을 처방해 드립니다〉는 관람객의 마음 상태에 맞춰 가상 낙원으로 지칭되는 디지털 자연을 처방해 준다. 이는 일상에서 벗어나는 이완과 환기의 순간을 제공하며 미래형 클리닉센터로도 상상해 볼 수 있을 것이다. 작품의 완성을 위해 작가는 다양한 데이터를 차용하는데 심박수나 산소포화도 같은 개인의 바이오데이터와 딥러닝한 명화-감정 모델을 활용하여 맞춤형 자연을 처방한다. 여기에 SF 영화적 상상이 더해지고 VR 기술을 결합함으로써 처방한 디지털 자연(가상낙원)에 몰입할 수 있는 환경을 구축한다. 또한 디지털 처방의 체험 마지막 단계에는 음료 처방과 움직이는 오브제 처방과 같은 명상 단계를 함께 설정함으로써 후각, 미각과 같은 다양한 감각을 동시에 체험할 수 있는 것이 특징이다. 이러한 예술적 시도는 일상에서 벗어나는 순간을 제공함과 동시에 미래형 휴식은 무엇인지, 셀프케어에 대한 시도는 어떠한 방식으로 가능할지에 대한 질문과 가능성을 동시에 제시한다.
             </div>
-
+            <div class="gallerycontainer">
+                <ul>
+                    <li><img src="resource/eewanclinic.png" style="width:100%">
+                    </li>
+                    <li>  <img src="resource/virsona2.png" alt="">
+                    </li>
+                    <li><img src="resource/eewanclinic.png" style="width:100%">
+                    </li>
+                    <li>  <img src="resource/virsona.png" alt="">
+                    </li>
+                </ul>
+                <ul></ul>
+            </div>
 
         </div>
         <button class="modal_close" id="aboutclose" onclick="modalremove('eewanclinic')">✖︎</button>
