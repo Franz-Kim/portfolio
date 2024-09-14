@@ -50,6 +50,27 @@
     <div class="contents_container">
         <!-- first contents-->
 
+        <!-- 3Dpresso -->
+          <div class="contents #AI #service #UX">
+            <div class="thumbnailimg" onclick="modalpopup('3dpresso')">
+                <img src="resource/virsona2.png" alt="">
+            </div>
+            <div class="textcontainer">
+                <div class="taglist">
+                    <button onclick="filterSelection('#AI')" class="tag">#AI</button>
+                    <button onclick="filterSelection('#service')" class="tag">#service</button>
+                    <button onclick="filterSelection('#UX')" class="tag">#UX</button>
+                </div>
+                <button onclick="modalpopup('3dpresso')" class="worktitle">3Dpresso</button>
+                <div class="year">2022</div>
+                <div class="description english">
+                 3dpresso descriptions.3dpresso descriptions.3dpresso descriptions.3dpresso descriptions.3dpresso descriptions.
+                </div>
+                <button class="more" onclick="modalpopup('3dpresso')">more information ></button>
+            </div>
+        </div>
+
+
 
         <!-- 비로소나 -->
         <div class="contents #mindfulness #exhibition #service #installation">
@@ -240,17 +261,19 @@
     <div class="modal" id="about">
         <div class="modal_contents_container" id="aboutcontainer">
 <b style="font-size: 3rem; line-height: 4rem;">Seungki Kim</b>
-<b style="font-size: 1.2rem; font-weight: 300;">creative developer</b>
+<b style="font-size: 1.2rem; font-weight: 300;">Creative Developer</b>
 franzkim89@gmail.com
 
  
 <b style="font-size: 1.2rem;">Experiences</b>
-
-    2022.03 - 		        Lecturer, Korea University, Dept. of Industrial Design
-    2022.03 -		        Lecturer, Sungshin Women’s University, Dept. of Future Convergence Technology Engineering
-    2021.04 -		        ZER01NE Creator, Hyundai Motor Group
-    2020.10 - 2021.12	Co-founder, Studio atom&bits
-    2019.04 - 2020.10 	Senior Designer, Corporate Design Center, Samsung Electronics
+    2024.01 - 		        <b>Creative Advisor</b>, RECONLabs (AI Startup)
+    2022.06 - 2024.01	<b>Product Team Lead</b>, Creative Director, RECONLabs (AI Startup)
+    2022.03 - 2022.08   <b>Lecturer</b>, Korea University, Dept. of Industrial Design
+    2022.03 - 2022.08   <b>Lecturer</b>, Sungshin Women’s University, Dept. of Future Convergence Technology Engineering
+    2021.10 - 		        <b>ZER01NE Alumni Creator</b>, Hyundai Motor Group
+    2021.04 - 2022.10   <b>ZER01NE Creator</b>, Hyundai Motor Group
+    2020.10 - 2021.12	<b>Co-founder</b>, Studio atom&bits
+    2019.04 - 2020.10 	<b>Senior Designer</b>, Corporate Design Center, Samsung Electronics
 
 <b style="font-size: 1.2rem;">Education</b>
 
@@ -289,8 +312,59 @@ franzkim89@gmail.com
         <button class="modal_close" id="aboutclose" onclick="modalremove('about')">✖︎</button>
     </div>
 
+
+
+
+    <!-- 3dpresso-->
+    <div class="modal" id="3dpresso">
+        <div class="modal_contents_container">
+
+            <div class="mainimg">
+                <div class="slideshow-container">
+
+                    <div class="3dpressoSlide mySlides fade">
+                      <div style="padding:56.25% 0 0 0; position: relative;"><iframe src="https://player.vimeo.com/video/641347952?h=f6e5b5a99f&color=5f9ea0&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                    </div>
+                    <!--
+                    <div class="virsonaSlide mySlides fade">
+                      <img src="resource/solsol.png" style="width:100%">
+                    </div>
+                    
+                    <div class="virsonaSlide mySlides fade">
+                      <img src="resource/eewanclinic.png" style="width:100%">
+                    </div>
+                    -->
+                    <a class="prev" onclick="plusSlides('3dpresso',-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides('3dpresso',1)">&#10095;</a>
+                    
+                </div>
+                    <br>
+                <div style="text-align:center">
+                    <span class="3dpressoSlide dot" onclick="currentSlide('3dpresso',1)"></span> 
+                   <!-- <span class="virsonaSlide dot" onclick="currentSlide('virsona',2)"></span> 
+                    <span class="virsonaSlide dot" onclick="currentSlide('virsona',3)"></span> -->
+                </div>
+
+            </div> 
+            <div class="modaltitle">
+                3Dpresso
+            </div>
+
+            <div class="modaltext">3Dpresso Text</div>
+
+            <div class="modaltext">text</div>
+
+        </div>
+       
+
+
+        <button class="modal_close" id="aboutclose" onclick="modalremove('3dpresso')">✖︎</button>
+    </div>
+
+
+
     <!-- 비로소나-->
-    <div class="modal" id="virsona">
+    <div class="modal" id="3dpresso">
         <div class="modal_contents_container">
 
             <div class="mainimg">
@@ -336,6 +410,9 @@ franzkim89@gmail.com
 
         <button class="modal_close" id="aboutclose" onclick="modalremove('virsona')">✖︎</button>
     </div>
+
+
+
 
     <!-- 이완클리닉-->
     <div class="modal" id="eewanclinic">
