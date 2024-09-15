@@ -30,14 +30,14 @@ function DropdownFunction() {
 
 
 
-filterSelection("Works▼")
+filterSelection("Filter▼")
 function filterSelection(c) {
     var filter_name = document.getElementById("dropbtnid");
     filter_name.innerHTML = c;
     var x, i;
     x = document.getElementsByClassName("contents");
    
-    if (c == "Works▼") c = "";
+    if (c == "Filter▼") c = "";
 
     var targetobjectgroup =[];
     for (i = 0; i < x.length; i++) {
