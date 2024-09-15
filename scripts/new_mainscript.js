@@ -88,7 +88,7 @@ function modalpopup(c) {
   document.getElementById("modal_back").style.display = 'block';
   targetobj.style.display ='block';
   document.body.style.overflow = 'hidden';
-  showSlides(c,1);
+ // showSlides(c,1);
 
   anime({
     targets: '.modalback',
@@ -129,7 +129,8 @@ function modalremove(c){
 
   });
 
-  slideIndex=1;
+  
+ // slideIndex=1;
 
    var iframe = document.getElementsByTagName( 'iframe');
   // var video = document.querySelector( 'video' );
@@ -143,7 +144,7 @@ function modalremove(c){
 
 }
 
-
+/*
 //slide code
 var slideIndex = 1;
 
@@ -175,7 +176,7 @@ function showSlides(k,n) {
 
   }
 }
-
+*/
 
 
 
