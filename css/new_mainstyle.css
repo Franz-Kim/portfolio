@@ -549,13 +549,23 @@ button{
   .modal{
     transform-origin: 50%,50%;
     position: fixed;
-    top: 7.5%;
-    left: 7.5%;
-    width: 85%;
-    height: 85%;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
     border-radius: 2rem;
     display: none;
     background-color: rgba(255, 255, 255, 0.9); 
+  }
+
+  .modal_contents_container{
+    width:calc(100% - 3*1rem);
+    height: calc(100% - 5*1rem);
+    position:absolute;
+    top: 2.5rem;
+    left: 1.5rem;
+    overflow-y: auto;
+  
   }
 
 

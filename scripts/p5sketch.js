@@ -1,8 +1,3 @@
-/*
-author:  lisper <leyapin@gmail.com> 2015
-desc:    noise 2d line
-This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
-*/
 
 var mycontainer = document.getElementById('canvascontainer');
 
@@ -12,10 +7,12 @@ nz = 0;
 color_v =[];
 i_ =0;
 j_=0;
+mousex_=0;
+mousedelta=0;
 
 function setup() {
     
-  var canvas = createCanvas(mycontainer.offsetWidth*0.8, mycontainer.clientHeight);
+  var canvas = createCanvas(mycontainer.offsetWidth, mycontainer.clientHeight);
   canvas.parent(mycontainer);
   colorMode (HSB);
   for ( i=0; i<width+22; i += 25) { // 포스터용 10
@@ -28,6 +25,7 @@ function setup() {
 
 
 function draw() {
+
   
   background (255); //30,255,22 //포스터용 : 30,0,255
   colorMode(RGB);
@@ -35,6 +33,7 @@ function draw() {
   strokeWeight(1)
  
    drawStream ();
+   mousex_=mouseX;
 
 }
 
@@ -60,12 +59,13 @@ function drawStream () {
     nx += 0.02;
   }
   i_=0;
-  nz +=0.0015;
+  mousedelta=mouseX-mousex_;
+  nz +=(0.0015+(mousedelta*mousedelta/100000.0));
 
 }
 
 function windowResized() {
  
-    resizeCanvas(mycontainer.offsetWidth*0.8, mycontainer.clientHeight);
+    resizeCanvas(mycontainer.offsetWidth, mycontainer.clientHeight);
     
   }
