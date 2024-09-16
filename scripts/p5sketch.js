@@ -11,6 +11,7 @@ mousex_=0;
 mousedelta=0;
 mobile_density =40;
 
+
 function setup() {
     
   var canvas = createCanvas(mycontainer.offsetWidth, mycontainer.clientHeight);
@@ -21,6 +22,10 @@ function setup() {
 
       }
   }
+  if(mycontainer.offsetWidth>768)
+    mobile_density =40;
+  else mobile_density =25;
+  
 }
 
 
