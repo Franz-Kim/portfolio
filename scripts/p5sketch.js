@@ -9,6 +9,7 @@ i_ =0;
 j_=0;
 mousex_=0;
 mousedelta=0;
+mobile_density =40;
 
 function setup() {
     
@@ -40,10 +41,10 @@ function draw() {
 
 function drawStream () {
   nx = 0;
-  for ( i=0; i<width+22; i += mycontainer.offsetWidth/40) { // 포스터용 10, 일반 30
+  for ( i=0; i<width+22; i += mycontainer.offsetWidth/mobile_density) { // 포스터용 10, 일반 30
     ny = 0;
     i_++;
-    for ( j=0; j<height+22; j += mycontainer.offsetWidth/40) { //포스터용 10, 일반 30
+    for ( j=0; j<height+22; j += mycontainer.offsetWidth/mobile_density) { //포스터용 10, 일반 30
       let displacement =0;
       
       angle = map (noise (nx, ny, nz), 0, 1.0, 0, 4* Math.PI);
@@ -67,5 +68,8 @@ function drawStream () {
 function windowResized() {
  
     resizeCanvas(mycontainer.offsetWidth, mycontainer.clientHeight);
+    if(mycontainer.offsetWidth>768)
+      mobile_density =40;
+    else mobile_density =25;
     
   }
