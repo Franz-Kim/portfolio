@@ -60,7 +60,7 @@ function drawStream () {
   }
   i_=0;
   mousedelta=mouseX-mousex_;
-  nz +=(0.0015+(mousedelta*mousedelta/100000.0));
+  nz +=(0.0015+(sqrt(mousedelta*mousedelta)/5000.0));
 
 }
 
