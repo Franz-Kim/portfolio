@@ -23,11 +23,12 @@
 <body>
     <header class="navigation">
         <nav class="navigation_list"><a href="">FranzKim</a></nav>
-        <nav class="navigation_list">
+        <!--<nav class="navigation_list">
             <button class="shortcutbtn"> <a href="#product"> Product </a></button>
             <button class="shortcutbtn"> <a href="#exhibition"> Exhibition</a></button>
             <button class="shortcutbtn"> <a href="#research"> Research </a></button>
-        </nav>
+        </nav>   
+        -->
         
         <nav class="navigation_list" id="filtermenu">
             <div class="dropdown">
@@ -71,8 +72,31 @@
         <!-- first contents-->
 
         <!-- break line-->
-         <div class="category" id="product">| Product |</div>
+        <!-- <div class="category" id="product">| Product |</div>   -->
          
+       <!-- Breathroom -->
+       <div class="contents #Product #AI">
+        <div class="thumbnailimg" onclick="modalpopup('breathroom')">
+            <img src="resource/breathroom_title.webp" alt="">
+        </div>
+        <div class="textcontainer">
+            <div class="taglist">
+                <button class="tag">#exhibition</button>
+                <button class="tag">#3Dprint</button>
+            </div>
+            <button onclick="modalpopup('breathroom')" class="worktitle">BreathRoom</button>
+            <div class="subtitle">
+                <div class="year">2025</div>
+                <div class="role">with WONWOORI</div>
+            </div>
+            <div class="description">
+                공간 《브레스룸》은 생명의 근원인 호흡을 통해 미지의 감각을 탐험하는 초현실적인 공간입니다. 이곳에서는 당신의 가장 본연적인 숨결이 단순한 공기의 흐름을 넘어, 내면의 미세한 움직임에 반응하여 새로운 생명력을 지닌 소리로 재탄생합니다. 
+            </div>
+            <button class="more" onclick="modalpopup('breathroom')">more information ></button>
+        </div>
+    </div>
+
+
         <!-- AI 광고 통합 -->
         <div class="contents #Product #AI">
             <div class="thumbnailimg" onclick="modalpopup('AIAD')">
@@ -83,7 +107,7 @@
                     <button class="tag">#Product</button>
                     <button class="tag">#AI</button>
                 </div>
-                <button onclick="modalpopup('AIAD')" class="worktitle">AI 광고 제작 : CJENM, 불스원 등</button>
+                <button onclick="modalpopup('AIAD')" class="worktitle">AI 광고 제작</button>
                 <div class="subtitle">
                     <div class="year">2025</div>
                     <div class="role">AI 파트 디렉터</div>
@@ -127,6 +151,8 @@
                 <button onclick="filterSelection('#UX')" class="tag">#UX</button>
                 요건 필터 버튼 혹시 몰라서
         -->
+
+        <!--
         <div class="contents #AI #service #UX">
         <div class="thumbnailimg" onclick="modalpopup('immersivelookbook')">
             <img src="resource/immersive_title.png" alt="">
@@ -149,6 +175,7 @@
             <button class="more" onclick="modalpopup('immersivelookbook')">more information ></button>
         </div>
     </div>
+    -->
 
         <!-- 3Dpresso -->
           <div class="contents #AI #service #UX">
@@ -174,7 +201,7 @@
         </div>
 
         <!-- break line-->
-        <div class="category" id="exhibition">| Exhibition |</div>
+        <!-- <div class="category" id="exhibition">| Exhibition |</div> -->
 
 
         <!-- 비로소나 -->
@@ -249,7 +276,7 @@
         </div>
 
         <!-- break line-->
-        <div class="category" id="research">| Research |</div>
+        <!-- <div class="category" id="research">| Research |</div> -->
 
 
         <!-- 터치브랜치 -->
@@ -418,6 +445,80 @@ franzkim89@gmail.com
         <button class="modal_close" id="aboutclose" onclick="modalremove('about')">✖︎</button>
     </div>
 
+
+
+    <!-- Breathroom -->
+    <div class="modal" id="breathroom">
+        <div class="modal_contents_container">
+
+            <div class="mainimg">
+                <img src="resource/breathroom_title.webp">
+            </div> 
+            <div class="modaltitle">
+                BreathRoom(2025)
+            </div> 
+            <div class="modal_extrainfo">With WONWOORI </div>
+            <div class="modal_extrainfo"> </div>
+            <div class="contentslink"><a href="https://www.instagram.com/prpt_set/" target="_blank">전시정보 ></a></div> 
+ 
+            <div class="modaltext">
+                <p>공간 《브레스룸》은 생명의 근원인 호흡을 통해 미지의 감각을 탐험하는 초현실적인 공간입니다. 이곳에서는 당신의 가장 본연적인 숨결이 단순한 공기의 흐름을 넘어, 내면의 미세한 움직임에 반응하여 새로운 생명력을 지닌 소리로 재탄생합니다.
+                </p>
+                <p>
+                중앙에 놓인 파이프에 호흡을 불어넣는 순간, 네 대의 초현실적인 스피커들은 당신의 숨결에 반응합니다. 그리고 이내 꿈결 같은 사운드스케이프가 펼쳐집니다. 이 소리는 단순히 귀로 듣는 것을 넘어, 공간 음향적으로 당신의 내면 깊숙이 스며들어 잠재된 감각을 깨우고 의식을 확장시킬 것입니다.
+                </p>
+                <p>
+                호흡에 따라 변화하는 음향은 시끄러운 일상으로부터 벗어나, 내 안에 집중할 수 있는 감각적 경험을 선사합니다.
+                공중에 떠 있는 듯한 스피커 오브제는 내부에 최소한의 구조로 지지되며, 부유하는 조형감을 연출합니다.
+                공간을 흐르듯 가로지르는 3D 프린트 패브릭은 바람에 반응하며 움직임을 유도하고, 섬세한 떨림을 통해 호흡이라는 테마를 시각화합니다.
+                다면체와 곡선을 혼합한 형태는 유기성과 구조성을 동시에 담아내며, 반투명한 표면은 관람자의 시점에 따라 밀도와 깊이가 달라 보이도록 설계되었습니다.
+                전체적으로는 가볍고 고요한 긴장감을 만들기 위해, 다양한 3D 프린팅 기법과 재료의 조합을 실험했습니다.
+                </p>
+
+                <p>기획 원우리 WONWOORI & 김승기 SEUNGKI KIM </br>
+                사운드 및 시스템 원우리 WONWOORI</br>
+                3D프린트 조형 및 스피커 제작 김승기 SEUNGKI KIM</br>
+                설치 이주하</br>
+                </p>
+                <p>
+                전시 《PRPT: Vault Service II》</br>
+                일시 2025. 8. 6 - 8. 10(Wed-Sun)</br>
+                장소 더블유젯 스튜디오(서울 성동구 연무장길 98)</br>
+                주최 (주)예술고래상회(오아에이전시)</br>
+                주관 오아에이전시, PRPT @prpt_set @oaahagency</br>
+                </p>                
+                
+            </div>
+            <div class="gallerycontainer">
+                <ul>
+                    <li><img src="resource/breathroom1.webp" >
+                    </li>
+                    <li><img src="resource/breathroom2.webp" >
+                    </li>
+                    <li><img src="resource/breathroom3.webp" >
+                    </li>
+                    <li><img src="resource/breathroom4.webp" >
+                    </li>
+                    <li>  <img src="resource/breathroom5.webp">
+                    </li>
+ 
+                 
+                </ul>
+                <ul></ul>
+            </div>
+
+        </div>
+        <button class="modal_close" id="aboutclose" onclick="modalremove('breathroom')">✖︎</button>
+    </div>
+
+
+
+
+
+
+
+
+
     <!-- AI 광고 -->
     <div class="modal" id="AIAD">
         <div class="modal_contents_container">
@@ -499,7 +600,6 @@ franzkim89@gmail.com
             <div class="modal_extrainfo">사용 툴 : Blender, Midjourny, PhotoRoom AI, LUMA AI, Runway AI, Photoshop, Figma, Orca slicer </div>
  
             <div class="contentslink"><a href="https://www.instagram.com/fabor.objet/" target="_blank">파보르 오브제 보러가기 ></a></div> 
-            <div class="contentslink"><a href="https://faborobjet.shop.blogpay.co.kr/" target="_blank">파보르 오브제 몰 ></a></div> 
 
 
             <div class="modaltext">
